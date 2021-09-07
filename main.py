@@ -1,8 +1,3 @@
-# Updated March 2018
-# Isha Puri, ishapuri101@gmail.com
-
-# Terminal Command: python final_dyslexia_diagnostic_code.py --shape-predictor shape_predictor_68_face_landmarks.dat --picamera 1
-
 # import the necessary packages
 from imutils.video import VideoStream
 from imutils import face_utils
@@ -114,18 +109,12 @@ def eyeCenterCoordinates(filePath):  # reads eye Center coordinates from Data Fi
     return (rightEyeCenterX, rightEyeCenterY, leftEyeCenterX, leftEyeCenterY)
 
 
-# construct the argument parse and parse the arguments
-ap = argparse.ArgumentParser()
-ap.add_argument("-p", "--shape-predictor", required=True,
-                help="path to facial landmark predictor")
-ap.add_argument("-r", "--picamera", type=int, default=-1,
-                help="whether or not the Raspberry Pi camera should be used")
-args = vars(ap.parse_args())
+
 
 # initialize dlib's face detector (HOG-based) and then create the facial landmark predictor
 print("[INFO] loading facial landmark predictor...")
 detector = dlib.get_frontal_face_detector()
-predictor = dlib.shape_predictor(args["shape_predictor"])
+predictor = dlib.shape_predictor("shape_predictor_68_face_landmarks.dat")
 eyeCascPath = "haarcascade_eye.xml"
 eyeCascade = cv2.CascadeClassifier(eyeCascPath)
 
