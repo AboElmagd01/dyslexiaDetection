@@ -6,7 +6,7 @@
 Clone this Project:
 
 ```bash
-https://github.com/AboElmagd01/dyslexiaDetection
+git clone https://github.com/AboElmagd01/dyslexiaDetection
 ```
 Go to Project Directory:
 ```bash
